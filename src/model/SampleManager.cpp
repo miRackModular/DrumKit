@@ -41,10 +41,10 @@ namespace DrumKit {
     mantissa = modf(ctx->currentPosition, &characteristic);
 
     if (mantissa == 0) {
-      return ctx->sample->values[(uint64_t) characteristic - 1];
+      return characteristic > 0 ? ctx->sample->values[(uint64_t) characteristic - 1] : 0;
     }
 
-    float f1 = ctx->sample->values[(uint64_t) characteristic - 1];
+    float f1 = characteristic > 0 ? ctx->sample->values[(uint64_t) characteristic - 1] : 0;
     float f2 = ctx->sample->values[(uint64_t) characteristic];
 
     return f1 + ((f2 - f1) * mantissa);

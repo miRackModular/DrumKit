@@ -41,9 +41,9 @@ void BaronialModule::process(const ProcessArgs &args) {
   envelope.setReleaseTime(paramValue(RELEASE_TIME_PARAM, RELEASE_TIME_CV, 0.001, 4.999) * args.sampleRate);
   envelope.setSustainLevel(paramValue(SUSTAIN_LEVEL_PARAM, SUSTAIN_LEVEL_CV, 0.01, 0.99));
 
-  envelope.setAttackCurve((CurveType) params[ATTACK_CURVE_PARAM].value);
-  envelope.setDecayCurve((CurveType) params[DECAY_CURVE_PARAM].value);
-  envelope.setReleaseCurve((CurveType) params[RELEASE_CURVE_PARAM].value);
+  envelope.setAttackCurve((CurveType)(float) params[ATTACK_CURVE_PARAM].value);
+  envelope.setDecayCurve((CurveType)(float) params[DECAY_CURVE_PARAM].value);
+  envelope.setReleaseCurve((CurveType)(float) params[RELEASE_CURVE_PARAM].value);
   envelope.setPeakLevel(1);
 
   outputs[OUT].setVoltage(envelope.step() * 5);

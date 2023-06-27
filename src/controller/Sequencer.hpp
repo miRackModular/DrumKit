@@ -71,7 +71,7 @@ struct SequencerModule : Module {
   SynthDevKit::CV *resetCV;
 
   int8_t currentCount;
-  int8_t currentPlay;
+  int8_t currentPlay = 0;
   int16_t currentGate;
   uint64_t currentPulse;
   int8_t currentPosition;

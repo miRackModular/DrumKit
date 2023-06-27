@@ -2,30 +2,32 @@
 
 #include "shadow.hpp"
 
-struct DKKnob : app::SvgKnob {
-protected:
-  DKShadow shadow = DKShadow();
+// struct DKKnob : app::SvgKnob {
+// protected:
+//   DKShadow shadow = DKShadow();
 
-public:
-  DKKnob() {
-		minAngle = -0.83*M_PI;
-		maxAngle = 0.83*M_PI;
-	}
+// public:
+//   DKKnob() {
+// 		minAngle = -0.83*M_PI;
+// 		maxAngle = 0.83*M_PI;
+// 	}
 
-  void setSvg(std::shared_ptr<Svg> svg) {
-    app::SvgKnob::setSvg(svg);
+//   void setSvg(std::shared_ptr<Svg> svg) {
+//     app::SvgKnob::setSvg(svg);
 
-    shadow.setBox(box);
-  }
+//     shadow.setBox(box);
+//   }
 
-  void draw(const DrawArgs &args) override {
-    /** shadow */
-    shadow.draw(args.vg);
+//   void draw(const DrawArgs &args) override {
+//     /** shadow */
+//     shadow.draw(args.vg);
 
-    /** component */
-    app::SvgKnob::draw(args);
-  }
-};
+//     /** component */
+//     app::SvgKnob::draw(args);
+//   }
+// };
+
+using DKKnob = RoundKnob;
 
 struct LightKnob : DKKnob {
   LightKnob() {

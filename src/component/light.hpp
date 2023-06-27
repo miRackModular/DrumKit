@@ -2,22 +2,24 @@
 
 #include "shadow.hpp"
 
-struct DKLEDBezel : LEDBezel {
-private:
-  DKShadow shadow = DKShadow();
+using DKLEDBezel = LEDBezel;
 
-public:
-  void setSvg(std::shared_ptr<Svg> svg) {
-    shadow.setBox(box);
-  }
+// struct DKLEDBezel : LEDBezel {
+// private:
+//   DKShadow shadow = DKShadow();
 
-  void draw(const DrawArgs &args) override {
-    /** shadow */
-    shadow.draw(args.vg);
+// public:
+//   void setSvg(std::shared_ptr<Svg> svg) {
+//     shadow.setBox(box);
+//   }
 
-    LEDBezel::draw(args);
-  }
-};
+//   void draw(const DrawArgs &args) override {
+//     /** shadow */
+//     shadow.draw(args.vg);
+
+//     LEDBezel::draw(args);
+//   }
+// };
 
 template <typename BASE>
 struct DKButtonLight : BASE {

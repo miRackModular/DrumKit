@@ -29,7 +29,7 @@ void DMXModule::setupSamples() {
   char name[32];
 
   for (uint8_t i = 0; i < numSamples; i++) {
-    sprintf(name, "DMX-%02d", i + 1);
+    sprintf(name, "dmx-%02d", i + 1);
     samples[i] = sampleManager->selectSample(name);
   }
 }

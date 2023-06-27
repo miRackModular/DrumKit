@@ -36,7 +36,7 @@ GnomeWidget::GnomeWidget(GnomeModule *module) {
     addChild(width);
   }
 
-  addParam(createParam<DKSwitch>(Vec(83, 39), module, GnomeModule::SWING));
+  addParam(createParam<CKSSH>(Vec(79, 41), module, GnomeModule::SWING));
 
   addParam(createParam<DKLEDBezel>(Vec(28, 33), module,
                                          GnomeModule::RUN));
